@@ -4,9 +4,7 @@ Extracts portion of some input content like String, file, URI, ...
 
 ## Usage
     
-    Excerpt.new('application.html').around_line(12, radius: 2)
-
-from some app gives you this code:
+    > puts Excerpt.new('application.html').around_line(12, radius: 2)
 
       = csrf_meta_tags
     %body
@@ -16,10 +14,8 @@ from some app gives you this code:
 
 You can also request a excerpt from URI:
 
-    # radius is omitted here, default value is 4
-    Excerpt.new('https://github.com/rails/rails/blob/master/railties/lib/rails.rb').around_line(26)
-
-gives you:
+    > # radius is omitted here, default value is 4
+    > puts Excerpt.new('https://raw.github.com/rails/rails/master/railties/lib/rails.rb').around_line(26)
 
     module Rails
       autoload :Info, 'rails/info'
@@ -28,8 +24,8 @@ gives you:
 
       class << self
         def application
-          @application ||= nil
-        end
+        @application ||= nil
+      end
 
 ## Installation
 
